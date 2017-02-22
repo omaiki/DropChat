@@ -16,4 +16,11 @@ class User < ApplicationRecord
     save
   end
 
+    def generate_access_token
+    loop do
+      token = "#{self.id}:#{Devise.friendly_token}"
+      break token unless User.where(access_token: token).first
+    end
+  end
+
 end
