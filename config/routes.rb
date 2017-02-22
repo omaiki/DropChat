@@ -38,6 +38,7 @@ Rails.application.routes.draw do
 
       resource :login, only: [:create], controller: :sessions
       resources :users, only: [:create]
+      resources :chats, only: [:index, :show, :create, :destroy]
 
 
     end
