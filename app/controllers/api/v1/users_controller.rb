@@ -1,5 +1,4 @@
-module V1
-class UsersController < ApplicationController
+class Api::V1::UsersController < ApplicationController
     skip_before_action :authenticate_user_from_token!, only: [:create]
 
     # POST /v1/users
@@ -10,7 +9,7 @@ class UsersController < ApplicationController
       if @user.save
         render json: @user, serializer: V1::SessionSerializer, root: nil
       else
-        render json: { error: t('user_create_error') }, status: :unprocessable_entity
+        render json: { error: ('user_create_error') }, status: :unprocessable_entity
       end
     end
 
@@ -20,4 +19,4 @@ class UsersController < ApplicationController
       params.require(:user).permit(:email, :username, :password, :password_confirmation)
     end
 end
-end
+
