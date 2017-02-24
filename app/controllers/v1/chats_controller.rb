@@ -3,7 +3,7 @@ module V1
 
     def index
       @chats = Chat.all.order(:id).reverse
-      render json: @chats, each_serializer: ChatsSerializer
+      render json: @chats, each_serializer: ChatSerializer
     end
 
     def show
