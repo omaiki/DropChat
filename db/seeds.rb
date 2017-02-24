@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create(email: 'oshoke@oshoke.com', password: 'oshoke')
-Chat.create(location: 70, title: 'TestChat')
-Message.create(content: "test_content")
+# User.create(email: 'oshoke@oshoke.com', password: 'oshoke')
+Chat.create(location: 70, title: 'TestChat', user_id: 1)
+# Message.create(content: "test_content")
 
 
 # curl -X POST -H "Content-type: application/json" -H "Authorization: 12:cccyXLZ7o_XpK6MxU_Bt" -d '{ "chat": { "title": "Test Title", "location": 70 } }' http://localhost:3000/v1/chats
