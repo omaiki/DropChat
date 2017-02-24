@@ -2,15 +2,15 @@ class ApplicationController < ActionController::Base
   include AbstractController::Translation
 
   before_action :authenticate_user_from_token!
-  before_action :ensure_json_request
+  # before_action :ensure_json_request
 
 
   respond_to :json
 
-  def ensure_json_request
-    return if request.format == :json
-    render :nothing => true, :status => 406
-  end
+  # def ensure_json_request
+  #   return if request.format == :json
+  #   render :nothing => true, :status => 406
+  # end
 
   # User Authentication
   # Authenticates the user with OAuth2 Resource Owner Password Credentials Grant

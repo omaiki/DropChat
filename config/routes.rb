@@ -1,19 +1,18 @@
-require 'api_constraints'
+# require 'api_constraints'
 
 Rails.application.routes.draw do
 
+  devise_for :users
 
-  namespace :api do
-    scope module: :v1 do
+
+  namespace :v1, defaults: { format: :json} do
 
       resources :chats
-      devise_for :users
+
       resource :login, only: [:create], controller: :sessions
       resources :users, only: [:create]
 
 
-
-    end
   end
 
 end
