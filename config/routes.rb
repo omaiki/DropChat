@@ -7,8 +7,9 @@ Rails.application.routes.draw do
 
   namespace :v1, defaults: { format: :json} do
 
-      resources :chats
+      resources :chats do
       resources :messages
+      end
 
       resource :login, only: [:create], controller: :sessions
       resources :users, only: [:create]
