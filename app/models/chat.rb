@@ -1,5 +1,10 @@
 class Chat < ApplicationRecord
 
-  validates_presence_of :location, :title
+  has_many :users
+  has_many :messages
+
+  validates :location, presence: true
+  validates :title, presence: true
+  validates :user, presence: true
 
 end

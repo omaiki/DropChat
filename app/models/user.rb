@@ -6,6 +6,9 @@ class User < ApplicationRecord
 
   after_create :update_access_token!
 
+  has_many :chats
+  has_many :messages
+
   validates :email, presence: true
   validates :password, presence: true
 
