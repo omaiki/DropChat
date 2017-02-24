@@ -1,4 +1,5 @@
-class Api::V1::UsersController < ApplicationController
+module V1
+  class UsersController < ApplicationController
     skip_before_action :authenticate_user_from_token!, only: [:create]
 
     # POST /v1/users
@@ -16,7 +17,8 @@ class Api::V1::UsersController < ApplicationController
     private
 
     def user_params
-      params.require(:user).permit(:email, :username, :password, :password_confirmation)
+      params.require(:user).permit(:email, :username, :password, :first_name, :last_name, :info )
     end
+  end
 end
 
