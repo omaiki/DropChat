@@ -1,5 +1,5 @@
-module V1
-  class V1::MessagesController < ApplicationController
+
+  class MessagesController < ApplicationController
     def index
       @messages = Message.all.order(:id).reverse
       render json: @messages, each_serializer: MessageSerializer
@@ -25,4 +25,4 @@ module V1
       params.require(:message).permit(:title, :location)
     end
   end
-end
+
