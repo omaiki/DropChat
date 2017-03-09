@@ -8,7 +8,7 @@ gem 'active_model_serializers'
 gem 'react-rails'
 gem 'responders'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18'
+# gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
