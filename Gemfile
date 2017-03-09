@@ -5,8 +5,10 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'devise'
 gem 'active_model_serializers'
-gem 'react-rails'
-gem 'responders'
+gem 'foreman', '~> 0.82.0'
+
+# gem 'react-rails'
+# gem 'responders'
 # Use postgresql as the database for Active Record
 # gem 'pg', '~> 0.18'
 gem 'sqlite3'
