@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  root to: 'site#welcome'
+
 
   namespace :v1, defaults: { format: :json} do
 
