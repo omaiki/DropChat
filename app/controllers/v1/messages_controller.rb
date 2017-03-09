@@ -1,4 +1,4 @@
-
+module V1
   class MessagesController < ApplicationController
     def index
       @messages = Message.all.order(:id).reverse
@@ -25,4 +25,6 @@
       params.require(:message).permit(:title, :location)
     end
   end
+
+end
 

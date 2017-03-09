@@ -1,4 +1,4 @@
-
+module V1
   class ChatsController < ApplicationController
 
     def index
@@ -27,3 +27,5 @@
     end
 
   end
+
+end
