@@ -209,6 +209,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 5.0.0, >= 5.0.0.1)
   react-rails
+  responders
   rspec-rails
   sass-rails (~> 5.0)
   spring
