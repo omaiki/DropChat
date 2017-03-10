@@ -9,7 +9,6 @@ import PhotoIcon from 'material-ui/svg-icons/image/photo';
 import List from 'material-ui/List/List';
 import ListItem from 'material-ui/List/ListItem';
 import Divider from 'material-ui/Divider';
-import Infinite from 'react-infinite';
 
 
 import {
@@ -30,7 +29,7 @@ export default class messages extends Component{
     return(
       <div>
       <Paper zDepth={2}>
-      <Infinite containerHeight={200} elementHeight={40}>
+
           <ListItem
             disabled={true}
             leftAvatar={
@@ -109,7 +108,7 @@ export default class messages extends Component{
                 Nm Chillen Like a Villain
               </ListItem>
           <Divider />
-        </Infinite>
+
         <Divider />
       <TextField hintText="Send Message" name="ChatInput" style={style} underlineShow={false} multiLine={true}  />
       <IconButton><PhotoIcon /></IconButton>
