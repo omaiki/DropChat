@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'react_on_rails'
 gem 'devise'
 gem 'active_model_serializers'
 gem 'foreman', '~> 0.82.0'
