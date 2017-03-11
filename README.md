@@ -1,14 +1,14 @@
 # DropChat
 
 
-* clone repo
-
+* clone DropChat
+* rails generate react_on_rails:install
 * bundle install
+* cd client
+* npm install 
+* cd ..
+* foreman start -f Procfile.dev
 
-
-* Switch to DropChat/client folder
-* npm i -g create-react-app
-* npm install
 
 
 
