@@ -8,6 +8,7 @@
 * npm install 
 * cd ..
 * foreman start -f Procfile.dev
+* localhost:3000 in browser 
 
 
 
