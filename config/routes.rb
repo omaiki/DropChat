@@ -13,8 +13,9 @@ Rails.application.routes.draw do
       resources :messages
       end
 
-      resource :login, only: [:create], controller: :sessions
       resources :users, only: [:create]
+
+      resource :login, only: [:create], controller: :sessions
 
 
   end
