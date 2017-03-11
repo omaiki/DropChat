@@ -2,9 +2,10 @@
 
 Rails.application.routes.draw do
 
+  get 'hello_world', to: 'hello_world#index'
   devise_for :users
 
-  root to: 'site#welcome'
+  # root to: 'site#welcome'
 
 
   namespace :v1, defaults: { format: :json} do
