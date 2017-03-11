@@ -11,13 +11,28 @@ import ActionDeleteForever from 'material-ui/svg-icons/action/delete-forever'
 
 import Login from './Login'; //Reference to Login JSX
 import Message from './Message'; //Reference to Message JSX
+import api from './Client'; //Reference to api calls in Client.js
 
 export default class App extends Component{
   constructor(props){
     super(props);
 
-    this.state = {messages: []};
+    // this.state = {messages: []};
+
+    /////////////////new
+
+    this.state = {
+      messages: [],
+      chats: '?',
+      // dataSource: ds.clonewithRows(['harry', 'potter']),
+    }
+
   }
+
+  componentDidMount() {
+      this.fetchData().done()
+  }
+
 
   componentWillMount(){
     this.setState({messages: [
@@ -58,6 +73,18 @@ export default class App extends Component{
 
   ]});
 
+  }
+
+
+
+    async fetchData() {
+      var url = 'https://localhost:3001/v1/chats'
+      const response = await fetch(url)
+      const json = await response.json()
+      const chats = json.chats
+      // const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+      // this.setState({dataSource: ds.cloneWithRows(chats),
+      // chats: chats})
   }
 
 
