@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   get 'hello_world', to: 'hello_world#index'
 
 
-  root 'v1/chats#index'
+  # root 'v1/chats#index'
+  root 'appointments#index'
 
   devise_for :users
+
+  resources :appointments
 
 
   namespace :v1, defaults: { format: :json} do

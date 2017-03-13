@@ -7,4 +7,5 @@ import ShowChats from '../components/chats';
 ReactOnRails.register({
   HelloWorld,
   Chats,
+  Appointments,
 });
