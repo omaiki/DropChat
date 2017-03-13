@@ -1,4 +1,4 @@
-module V1
+
   class MessagesController < ApplicationController
     def index
       @messages = Message.all.order(:id).reverse
@@ -26,5 +26,5 @@ module V1
     end
   end
 
-end
+
 

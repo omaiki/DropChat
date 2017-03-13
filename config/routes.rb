@@ -3,20 +3,21 @@
 Rails.application.routes.draw do
 
   get 'hello_world', to: 'hello_world#index'
+
+
+  root 'chats#index'
+  root 'appointments#index'
+
   devise_for :users
 
-  # root to: 'site#welcome'
+  resources :appointments
 
+  resources :chats do
+  resources :messages
 
-  namespace :v1, defaults: { format: :json} do
+  # resources :users, only: [:create]
 
-      resources :chats do
-      resources :messages
-      end
-
-      resources :users, only: [:create]
-
-      resource :login, only: [:create], controller: :sessions
+  # resource :login, only: [:create], controller: :sessions
 
 
   end
