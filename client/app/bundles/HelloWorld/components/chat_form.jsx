@@ -15,8 +15,8 @@ export default class ChatForm extends React.Component {
     this.props.onFormSubmit();
   }
 
-  setApptTime(e) {
-    const name = 'appt_time';
+  setLocation(e) {
+    const name = 'location';
     const obj = {};
     if(obj[name] = e.toDate()) {
       this.props.onUserInput(obj);
@@ -25,7 +25,7 @@ export default class ChatForm extends React.Component {
 
   render () {
     const inputProps = {
-      name: 'appt_time'
+      name: 'location'
     };
 
     return (
@@ -37,8 +37,8 @@ export default class ChatForm extends React.Component {
             onChange={(event) => this.handleChange(event)} />
 
           <Datetime input={false} open={true} inputProps={inputProps}
-            value={this.props.appt_time}
-            onChange={(event) => this.setApptTime(event)} />
+            value={this.props.location}
+            onChange={(event) => this.setLocation(event)} />
 
           <input type='submit' value='Make Chat' className='submit-button' />
         </form>
