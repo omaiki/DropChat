@@ -1,15 +1,15 @@
-module V1
+
   class ChatsController < ApplicationController
 
     def index
       @chats = Chat.all.order(:id).reverse
       @chat = Chat.new
-      render json: @chats, each_serializer: ChatSerializer
+      render json: @chats, each_serializer: V1::ChatSerializer
     end
 
     def show
       @chat = Chat.find(params[:id])
-      render json: @chat, serializer: ChatSerializer
+      render json: @chat, serializer: V1::ChatSerializer
     end
 
     def create
@@ -29,4 +29,4 @@ module V1
 
   end
 
-end
+
