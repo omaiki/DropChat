@@ -3,7 +3,7 @@ import ChatForm from './chat_form';
 import { ChatsList } from './chats_list';
 import update from 'immutability-helper';
 
-export default class ShowChats extends React.Component {
+export default class Chats extends React.Component {
   constructor (props, railsContext) {
     super(props)
     this.state = {
