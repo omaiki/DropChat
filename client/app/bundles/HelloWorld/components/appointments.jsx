@@ -17,6 +17,8 @@ export default class Appointments extends React.Component {
     this.setState(obj);
   }
 
+
+
   handleFormSubmit () {
     const appointment = {title: this.state.title, appt_time: this.state.appt_time};
     $.post('/appointments',
