@@ -2,9 +2,12 @@
   class ChatsController < ApplicationController
 
     def index
-      @chats = Chat.all.order(:id).reverse
-      @chat = Chat.new
-      render json: @chats, each_serializer: V1::ChatSerializer
+      # @appointments = Appointment.order('appt_time ASC')
+      # @appointment = Appointment.new
+
+      # @chats = Chat.all.order(:id).reverse
+      # @chat = Chat.new
+      # render json: @chats, each_serializer: V1::ChatSerializer
     end
 
     def show
@@ -28,5 +31,3 @@
     end
 
   end
-
-
