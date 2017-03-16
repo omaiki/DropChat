@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'hello_world', to: 'hello_world#index'
 
 
-  # root 'chats#index'
+   root 'chats#index'
   root 'appointments#index'
 
   devise_for :users

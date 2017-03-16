@@ -19,7 +19,7 @@ export default class Chats extends React.Component {
 
   handleFormSubmit () {
     const chat = {title: this.state.title, location: this.state.location};
-    $.post('v1/chats',
+    $.post('chats',
             {chat: chat})
           .done((data) => {
             this.addNewChat(data);
@@ -38,12 +38,15 @@ export default class Chats extends React.Component {
   render () {
     return (
       <div>
+        <h1> hello from chats</h1>
         <ChatForm input_title={this.state.title}
           input_location={this.state.location}
           onUserInput={(obj) => this.handleUserInput(obj)}
           onFormSubmit={() => this.handleFormSubmit()} />
-        <ChatsList chats={this.state.chats} />
+
       </div>
     )
   }
+
+
 }
