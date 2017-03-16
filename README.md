@@ -2,7 +2,6 @@
 
 
 * clone DropChat
-* rails generate react_on_rails:install
 * bundle install
 * cd client
 * npm install 
