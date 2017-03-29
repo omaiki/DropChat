@@ -6,7 +6,9 @@ export const ChatsList = ({chats}) =>
   <div>
     {chats.map(function(chat) {
       return (
+        
         <Chat chat={chat} key={chat.id} />
+
       )
     })}
   </div>

@@ -5,9 +5,8 @@
       # @appointments = Appointment.order('appt_time ASC')
       # @appointment = Appointment.new
 
-      # @chats = Chat.all.order(:id).reverse
-      # @chat = Chat.new
-      # render json: @chats, each_serializer: V1::ChatSerializer
+      @chats = Chat.all.order(:id).reverse
+      @chat = Chat.new
     end
 
     def show

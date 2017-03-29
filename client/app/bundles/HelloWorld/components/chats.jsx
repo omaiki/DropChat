@@ -43,6 +43,8 @@ export default class Chats extends React.Component {
           input_location={this.state.location}
           onUserInput={(obj) => this.handleUserInput(obj)}
           onFormSubmit={() => this.handleFormSubmit()} />
+          <ChatsList chats={this.state.chats} />
+
 
       </div>
     )
