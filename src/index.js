@@ -4,15 +4,20 @@ import App from './App';
 import './index.css';
 import * as firebase from 'firebase';
 
- var config = {
-    apiKey: "<API_KEY>",
-    authDomain: "<PROJECT_ID>.firebaseapp.com",
-    databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
-    storageBucket: "<BUCKET>.appspot.com",
-    messagingSenderId: "<SENDER_ID>",
-  };
 
-firebase.initializeApp(config);
+
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBOtUift82Bq8CFIklt-kbRx5QFjcb8P2g",
+    authDomain: "refire-app.firebaseapp.com",
+    databaseURL: "https://refire-app.firebaseio.com",
+    storageBucket: "refire-app.appspot.com",
+    messagingSenderId: "201898147893"
+  };
+  firebase.initializeApp(config);
+
+
 
 ReactDOM.render(
   <App />,
