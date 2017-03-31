@@ -3,7 +3,7 @@ import * as firebase from 'firebase';
 
 class Signup extends Component {
   render(){
-    return <div> Signup</div>;
+    return <div> Signup </div>;
   }
 
 }
