@@ -1,3 +1,8 @@
+
+- cd into DropChat
+- npm start
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
@@ -90,6 +95,7 @@ Create React App is divided into two packages:
 * `create-react-app` is a global command-line utility that you use to create new projects.
 * `react-scripts` is a development dependency in the generated projects (including this one).
 
+>>>>>>> 825f0a16adc1bab7a567de9f8125a134adb0effc
 You almost never need to update `create-react-app` itself: it delegates all the setup to `react-scripts`.
 
 When you run `create-react-app`, it always creates the project with the latest version of `react-scripts` so you’ll get all the new features and improvements in newly created apps automatically.
@@ -1516,17 +1522,31 @@ When you build the project, Create React App will place the `public` folder cont
 2. Install `serve` by running `npm install --save serve`.
 
 3. Add this line to `scripts` in `package.json`:
-    
+<<<<<<< HEAD
+
     ```
     "now-start": "serve build/",
     ```
-    
+
 4. Run `now` from your project directory. You will see a **now.sh** URL in your output like this:
-    
+
     ```
     > Ready! https://your-project-dirname-tpspyhtdtk.now.sh (copied to clipboard)
     ```
-    
+
+=======
+
+    ```
+    "now-start": "serve build/",
+    ```
+
+4. Run `now` from your project directory. You will see a **now.sh** URL in your output like this:
+
+    ```
+    > Ready! https://your-project-dirname-tpspyhtdtk.now.sh (copied to clipboard)
+    ```
+
+>>>>>>> 825f0a16adc1bab7a567de9f8125a134adb0effc
     Paste that URL into your browser when the build is complete, and you will see your deployed app.
 
 Details are available in [this article.](https://zeit.co/blog/now-static)
