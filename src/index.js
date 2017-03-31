@@ -15,6 +15,7 @@ import * as firebase from 'firebase';
     storageBucket: "refire-app.appspot.com",
     messagingSenderId: "201898147893"
   };
+
   firebase.initializeApp(config);
 
 
