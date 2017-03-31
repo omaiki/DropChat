@@ -7,7 +7,7 @@ class Header extends Component {
       <nav className="navbar navbar-default">
        <div className="container-fluid">
          <div className="navbar-header">
-           <a href="/" className="navbar-brand">React2Gifs</a>
+           <a href="/" className="navbar-brand">DropChat</a>
          </div>
           <ul className="nav navbar-nav navbar-right">
             <li className="nav-item">

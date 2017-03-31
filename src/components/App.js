@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Header from '../containers/Header';
+import Header from './Header.js';
 
 class App extends React.Component {
   render() {
@@ -11,3 +11,6 @@ class App extends React.Component {
     );
   }
 }
+
+
+export default App;
