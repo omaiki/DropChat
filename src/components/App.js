@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
-import Header from './Header.js';
+import Header from '../containers/Header';
+import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as Actions from '../actions';
 
 class App extends React.Component {
   render() {

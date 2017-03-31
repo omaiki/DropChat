@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import * as firebase from 'firebase';
 
 class Header extends Component {
@@ -23,5 +24,9 @@ class Header extends Component {
   }
 }
 
+function mapStateToProps(state){
+  return {}
+}
 
-export default Header;
+
+export default connect(mapStateToProps)(Header);
