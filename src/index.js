@@ -5,11 +5,13 @@ import Home from './Home';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Chat from './components/Chat';
+import { Provider } from 'react-redux';
+import configureStore from './store/configureStore';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import * as firebase from 'firebase';
 
 
-
+  const store = configureStore();
 
   // Initialize Firebase
   var config = {
