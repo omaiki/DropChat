@@ -15,8 +15,15 @@ class Chat extends Component {
   }
 
 
+//function is called whenever component shows up
+//lifecycle function, no need to call
+
   componentDidMount(){
+    //go into json object in database, find messages key
+    // if any changes, run callback function
     firebase.database().ref('messages/').on('value', (snapshot)=> {
+      //snapshot is current value of that key in database
+      //called everytime there is a change in the backend
       const currentMessages = snapshot.val()
 
       if (currentMessages != null){
@@ -43,13 +50,22 @@ class Chat extends Component {
       text: this.state.message
     }
 
-    firebase.database().ref('messages/'+nextMessage.id).set(nextMessage)
+
+    // whenever state change in component, react rerenders component
+    // new data will be rendered
+    // setState = reload
 
     // var list = Object.assign([], this.state.messages)
     // list.push(nextMessage)
     // this.setState({
     //   messages: list
     // })
+
+    //when we submit next message, reconnect to firebase
+    // find message key and add another key inside
+    //set our nextMessage as value for sub index
+  firebase.database().ref('messages/'+nextMessage.id).set(nextMessage)
+
   }
 
 

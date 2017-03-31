@@ -9,11 +9,12 @@ import * as firebase from 'firebase';
 
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyBOtUift82Bq8CFIklt-kbRx5QFjcb8P2g",
-    authDomain: "refire-app.firebaseapp.com",
-    databaseURL: "https://refire-app.firebaseio.com",
-    storageBucket: "refire-app.appspot.com",
-    messagingSenderId: "201898147893"
+    apiKey: "AIzaSyDIDm0mmUEKRfE0U8cxB0zXXADARaeUPGA",
+    authDomain: "dropchat-db.firebaseapp.com",
+    databaseURL: "https://dropchat-db.firebaseio.com",
+    projectId: "dropchat-db",
+    storageBucket: "dropchat-db.appspot.com",
+    messagingSenderId: "188114561089"
   };
 
   firebase.initializeApp(config);
