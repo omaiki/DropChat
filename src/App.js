@@ -1,25 +1,13 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, {Component} from 'react';
+import Header from '../containers/Header';
 
-import Chat from './components/Chat.js'
-import Signup from './components/Signup.js'
-import Login from './components/Login.js'
-
-
-class App extends Component {
-
-
-
-
+class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <Signup />
-        <Login />
-        <Chat />
+      <div>
+        <Header />
+        {this.props.children}
       </div>
     );
   }
 }
-
-export default App;
