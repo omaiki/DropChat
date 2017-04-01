@@ -21,9 +21,7 @@ class Chat extends Component {
   componentDidMount(){
     //go into json object in database, find messages key
     // if any changes, run callback function
-
-
-    firebase.database().ref('messages/').on('value', (snapshot)=> {
+    firebase.database().ref('messages2/').on('value', (snapshot)=> {
       //snapshot is current value of that key in database
       //called everytime there is a change in the backend
       const currentMessages = snapshot.val()
@@ -66,7 +64,7 @@ class Chat extends Component {
     //when we submit next message, reconnect to firebase
     // find message key and add another key inside
     //set our nextMessage as value for sub index
-  firebase.database().ref('messages/'+nextMessage.id).set(nextMessage)
+  firebase.database().ref('messages2/'+nextMessage.id).set(nextMessage)
 
   }
 
