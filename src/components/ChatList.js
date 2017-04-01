@@ -17,25 +17,18 @@ const ChatList = () => (
   <Router>
     <div>
       <ul>
-        <a href="#"><button><Link to="/">Home</Link></button></a>
         <a href="#"><button><Link to="/chat1">Chat 1</Link></button></a>
-        <a href="#"><button><Link to="/chat2">Chat 2</Link></button></a>                
+        <a href="#"><button><Link to="/chat2">Chat 2</Link></button></a>
       </ul>
 
       <hr/>
 
-      <Route exact path="/" component={Home}/>
       <Route path="/chat1" component={Chat1}/>
       <Route path="/chat2" component={Chat2}/>
     </div>
   </Router>
 )
 
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-)
 
 const Chat1 = () => (
   <div>
