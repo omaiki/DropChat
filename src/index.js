@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Home from './Home';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import * as firebase from 'firebase';
 
@@ -25,7 +24,7 @@ import * as firebase from 'firebase';
 
 ReactDOM.render(
 
-      <Home />,
+      <App />,
 
   document.getElementById('root')
 );

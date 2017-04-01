@@ -1,18 +1,19 @@
-import React, {Component} from 'react';
-import Header from './components/Header';
-import { connect } from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as Actions from './actions';
+import React, { Component } from 'react';
+import './App.css';
+import Chat from './components/Chat.js'
+import ChatList from './components/ChatList.js'
+import Header from './components/Header.js'
 
 
 
-// NAV BAR ON EVERY PAGE OF OUR APPLICATION or anything else (footer, logo)
-class App extends React.Component {
+class App extends Component {
+
+
   render() {
     return (
-      <div>
+      <div className="App">
         <Header />
-        {this.props.children}
+        <ChatList />
       </div>
     );
   }
