@@ -1,11 +1,25 @@
 import React, {Component} from 'react';
-import { connect } from 'react-redux';
 import * as firebase from 'firebase';
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
+import Login from './Login.js'
+import Signup from './Signup.js'
+
+const SignupRoute = () => (
+  <div>
+  <Signup />
+  </div>
+)
+
+
+const LoginRoute = () => (
+  <div>
+  <Login />
+  </div>
+)
 
 class Header extends Component {
   render(){
@@ -24,16 +38,16 @@ class Header extends Component {
               <Link className="nav-link" to="/signup">Sign Up</Link>
             </li>
           </ul>
+          <Route path="/login" component={LoginRoute}/>
+          <Route path="/signup" component={SignupRoute}/>
        </div>
-     </nav>
+      </nav>
+
+
      </Router>
    );
   }
 }
 
-function mapStateToProps(state){
-  return {}
-}
 
-
-export default connect(mapStateToProps)(Header);
+export default Header;

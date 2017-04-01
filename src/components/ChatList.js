@@ -28,12 +28,7 @@ const ChatList = () => (
     </div>
   </Router>
 )
-//
-// const Home = () => (
-//   <div>
-//     <h2>Home</h2>
-//   </div>
-// )
+
 
 const Chat1 = () => (
   <div>

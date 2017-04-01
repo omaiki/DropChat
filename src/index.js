@@ -2,16 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import Home from './Home';
-import Signup from './containers/Signup';
-import Login from './containers/Login';
-import Chat from './components/Chat';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import { Provider } from 'react-redux';
-import configureStore from './store/configureStore';
 import * as firebase from 'firebase';
 
 
-  const store = configureStore();
 
   // Initialize Firebase
   var config = {
@@ -30,8 +24,8 @@ import * as firebase from 'firebase';
 
 
 ReactDOM.render(
-  <Provider store={store}>
-      <Home />
-    </Provider>,
+
+      <Home />,
+
   document.getElementById('root')
 );
