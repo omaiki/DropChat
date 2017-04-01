@@ -19,7 +19,7 @@ const ChatList = () => (
       <ul>
         <a href="#"><button><Link to="/">Home</Link></button></a>
         <a href="#"><button><Link to="/chat1">Chat 1</Link></button></a>
-        <a href="#"><button><Link to="/chat2">Chat 2</Link></button></a>                
+        <a href="#"><button><Link to="/chat2">Chat 2</Link></button></a>
       </ul>
 
       <hr/>

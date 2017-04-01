@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
-import Home from './containers/Home';
+import App from './App';
+import Home from './Home';
 import Signup from './containers/Signup';
 import Login from './containers/Login';
 import Chat from './components/Chat';
@@ -31,7 +31,7 @@ import * as firebase from 'firebase';
 
 ReactDOM.render(
   <Provider store={store}>
-  <App />
-</Provider>,
+      <Home />
+    </Provider>,
   document.getElementById('root')
 );
