@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Chat from './components/Chat.js'
+import ChatList from './components/ChatList.js'
 
 
 class App extends Component {
@@ -13,7 +14,7 @@ class App extends Component {
     return (
       <div className="App">
 
-        <Chat />
+        <ChatList />
       </div>
     );
   }
