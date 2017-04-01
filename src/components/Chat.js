@@ -21,6 +21,8 @@ class Chat extends Component {
   componentDidMount(){
     //go into json object in database, find messages key
     // if any changes, run callback function
+
+
     firebase.database().ref('messages/').on('value', (snapshot)=> {
       //snapshot is current value of that key in database
       //called everytime there is a change in the backend
