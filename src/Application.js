@@ -6,6 +6,7 @@ import NewRestaurant from './NewRestaurant';
 import Restaurants from './Restaurants';
 import './Application.css';
 import ChatList from './components/ChatList';
+import NewChat from './NewChat';
 
 class Application extends Component {
   constructor(props) {
@@ -36,7 +37,14 @@ class Application extends Component {
         </header>
         <div>
         {!currentUser && <SignIn />}
-        {currentUser && <CurrentUser user={currentUser} />}
+        {
+          currentUser &&
+          <div>
+          <NewRestaurant />
+          <NewChat />
+          <CurrentUser user={currentUser} />}
+          </div>
+        }
         </div>
         < ChatList />
       </div>

@@ -1,23 +1,20 @@
 import React, { Component, PropTypes } from 'react';
 import { database } from './firebase';
-import './NewRestaurant.css';
 
-
-class NewRestaurant extends Component {
+class NewChat extends Component {
   constructor() {
     super();
     this.state = {
-      name: ''
+      name: '',
     };
 
-    this.restaurantsRef = database.ref('/restaurants');
+    this.chatsRef = database.ref('/chats');
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-// make new restaurant in database 
   handleSubmit(event) {
     event.preventDefault();
-    this.restaurantsRef.push({name: this.state.name});
+    this.chatsRef.push({name: this.state.name});
   }
 
   render() {
@@ -25,12 +22,12 @@ class NewRestaurant extends Component {
 
     return (
       <form
-        className="NewRestaurant"
+        className="NewChat"
       >
         <input
           type="text"
           value={ name }
-          placeholder="Name of Fine Establishment"
+          placeholder="Chat Name"
           onChange={(event) => this.setState({ name: event.target.value })}
         />
         <button
@@ -44,8 +41,8 @@ class NewRestaurant extends Component {
   }
 }
 
-NewRestaurant.propTypes = {
-  restaurantsRef: PropTypes.object
+NewChat.propTypes = {
+  chatsRef: PropTypes.object
 };
 
-export default NewRestaurant;
+export default NewChat;
