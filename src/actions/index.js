@@ -13,10 +13,11 @@ const API_URL = 'http://api.giphy.com/v1/gifs/search?q=';
 const API_KEY = '&api_key=dc6zaTOxFJmzC';
 
 const config = {
-
-    apiKey: "AIzaSyBOtUift82Bq8CFIklt-kbRx5QFjcb8P2g",
-    authDomain: "refire-app.firebaseapp.com",
-    databaseURL: "https://refire-app.firebaseio.com",
+  apiKey: "AIzaSyBOtUift82Bq8CFIklt-kbRx5QFjcb8P2g",
+  authDomain: "refire-app.firebaseapp.com",
+  databaseURL: "https://refire-app.firebaseio.com",
+  storageBucket: "refire-app.appspot.com",
+  messagingSenderId: "201898147893"
 };
 
 Firebase.initializeApp(config);
@@ -52,7 +53,6 @@ export function signUpUser(credentials) {
         browserHistory.push('/favorites');
       })
       .catch(error => {
-        console.log(error);
         dispatch(authError(error));
       });
   }
@@ -78,6 +78,19 @@ export function signOutUser() {
     type: SIGN_OUT_USER
   }
 }
+
+export function verifyAuth() {
+  return function (dispatch) {
+    Firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        dispatch(authUser());
+      } else {
+        dispatch(signOutUser());
+      }
+    });
+  }
+}
+
 
 export function authUser() {
   return {
