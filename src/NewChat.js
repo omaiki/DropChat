@@ -6,7 +6,6 @@ class NewChat extends Component {
     super();
     this.state = {
       name: '',
-      location: ''
     };
 
     this.chatsRef = database.ref('/chats');
@@ -15,6 +14,7 @@ class NewChat extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    this.chatsRef.push({name: this.state.name});
   }
 
   render() {
