@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { auth, googleAuthProvider, facebookAuthProvider } from './firebase';
+import { auth, googleAuthProvider, facebookAuthProvider, twitterAuthProvider } from './firebase';
 
 class SignIn extends Component {
   render() {
@@ -10,6 +10,9 @@ class SignIn extends Component {
       </button>
       <button onClick={() => auth.signInWithPopup(facebookAuthProvider)}>
       Login with Facebook Account
+      </button>
+      <button onClick={() => auth.signInWithPopup(twitterAuthProvider)}>
+      Login with Twitter Account
       </button>
       </div>
     );
