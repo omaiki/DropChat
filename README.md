@@ -1,5 +1,6 @@
 
 - cd into DropChat
+- npm install
 - npm start
 
 
