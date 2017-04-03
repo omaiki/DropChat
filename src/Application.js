@@ -17,6 +17,9 @@ class Application extends Component {
         <header className="Application--header">
           <h1>Lunch Rush</h1>
         </header>
+        <div>
+        <SignIn />
+        </div>
       </div>
     );
   }
