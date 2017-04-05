@@ -8,6 +8,8 @@ import './Application.css';
 import ChatList from './components/ChatList';
 import NewChat from './NewChat';
 
+import map from 'lodash/map';
+
 class Application extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +17,10 @@ class Application extends Component {
     //not logged in by default
     this.state = {
       currentUser: null
-    }
+    };
+
+    this.restaurantRef = database.ref('/restaurants');
+    this.chatRef = database.ref('/chats');
   }
 
   //when component mount
@@ -23,12 +28,21 @@ class Application extends Component {
     auth.onAuthStateChanged((currentUser) => {
       console.log('AUTH_CHANGE', currentUser);
       this.setState({ currentUser});
+
+      this.restaurantRef.on('value', (snapshot) => {
+        this.setState({ restaurants: snapshot.val() });
+      });
+
+      this.chatRef.on('value', (snapshot) => {
+        this.setState({ chats: snapshot.val() });
+      });
+
     });
 
   }
 
   render() {
-    const { currentUser } = this.state;
+    const { currentUser, restaurants, chats } = this.state;
 
     return (
       <div className="Application">
@@ -42,6 +56,8 @@ class Application extends Component {
           <div>
           <NewRestaurant />
           <NewChat />
+          { map(restaurants, (restaurant, key) => <p key={key}>{ restaurant.name }</p> ) }
+          { map(chats, (chat, key) => <p key={key}> { chat.name} </p>) }
           <CurrentUser user={currentUser} />}
           </div>
         }
