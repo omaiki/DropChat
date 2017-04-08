@@ -14,7 +14,6 @@ class Chat extends Component {
     }
   }
 
-
 //function is called whenever component shows up
 //lifecycle function, no need to call
 
@@ -23,6 +22,7 @@ class Chat extends Component {
     // if any changes, run callback function
 
 
+    // messages/1 == first message
     firebase.database().ref('messages/').on('value', (snapshot)=> {
       //snapshot is current value of that key in database
       //called everytime there is a change in the backend
@@ -67,7 +67,6 @@ class Chat extends Component {
     // find message key and add another key inside
     //set our nextMessage as value for sub index
   firebase.database().ref('messages/'+nextMessage.id).set(nextMessage)
-
   }
 
 

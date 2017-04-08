@@ -38,9 +38,6 @@ class UserInput extends Component {
         <input onChange={this.updateMessage} type="text" placeholder="Message" />
         <button onClick={this.submitMessage}>Submit Message</button>
 
-
-
-
       </div>
     );
   }

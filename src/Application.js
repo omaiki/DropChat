@@ -7,6 +7,11 @@ import Restaurants from './Restaurants';
 import './Application.css';
 import ChatList from './components/ChatList';
 import NewChat from './NewChat';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import RaisedButton from 'material-ui/RaisedButton';
+import AppBar from 'material-ui/AppBar';
+import { List } from 'material-ui/List';
+import Divider from 'material-ui/Divider';
 
 import map from 'lodash/map';
 
@@ -45,12 +50,19 @@ class Application extends Component {
     const { currentUser, restaurants, chats } = this.state;
 
     return (
+      <MuiThemeProvider>
       <div className="Application">
+
         <header className="Application--header">
-          <h1>DropChat</h1>
+          <AppBar
+            title="DropChat"
+            showMenuIconButton="false"
+          s>        {!currentUser && <SignIn />}
+        {currentUser && <CurrentUser user={currentUser} />}</AppBar>
         </header>
+
         <div>
-        {!currentUser && <SignIn />}
+
         {
           currentUser &&
           <div>
@@ -58,12 +70,13 @@ class Application extends Component {
           <NewChat />
           { map(restaurants, (restaurant, key) => <p key={key}>{ restaurant.name }</p> ) }
           { map(chats, (chat, key) => <p key={key}> { chat.name} </p>) }
-          <CurrentUser user={currentUser} />}
+          }
           </div>
-        }
+          }
         </div>
         < ChatList />
       </div>
+    </MuiThemeProvider>
     );
   }
 }
