@@ -3,6 +3,8 @@ import { auth } from './firebase';
 import './CurrentUser.css';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+
 
 const CurrentUser = ({ user }) => {
   return (
@@ -12,9 +14,9 @@ const CurrentUser = ({ user }) => {
        title={user.displayName}
        subtitle={user.email}
        avatar= {user.photoURL}
-     >  <button onClick={() => auth.signOut()}>
+     >  <FlatButton onClick={() => auth.signOut()}>
                Sign Out
-            </button>
+            </FlatButton>
           </CardHeader>
      {/*
        <img
@@ -26,9 +28,6 @@ const CurrentUser = ({ user }) => {
        <div className="CurrentUser--identification">
        <h3> {user.displayName } </h3>
        <p> { user.email } </p>*/}
-       <div className="CurrentUser--identification">
-
-       </div>
      </Card>
     </div>
 
