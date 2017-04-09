@@ -13,6 +13,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import AppBar from 'material-ui/AppBar';
 import { List } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
+import Subheader from 'material-ui/Subheader';
+import Paper from 'material-ui/Paper';
 
 import map from 'lodash/map';
 
@@ -53,7 +55,7 @@ class Application extends Component {
 
     return (
       <MuiThemeProvider>
-      <div class="container">
+      <div className="container">
       <div className="Application">
             <AppBar
             title="DropChat"
@@ -67,16 +69,22 @@ class Application extends Component {
         {
           currentUser &&
           <div >
-
-
+            <Subheader>OTHER ROOMS</Subheader>
+            <Divider/>
           { map(chats, (chat, key) => <p key={key}> { chat.name} </p>) }
+            <Divider/>
+
+          <Subheader>CREATE NEW CHAT</Subheader>
+
           <NewChat />
           </div>
         }
 
 
         </div>
-        <div className="col s4" >
+        <div className="col s8" >
+          <Subheader>CHAT ROOMS</Subheader>
+          <Divider/>
         < ChatList /></div>
       </div>
       </div>

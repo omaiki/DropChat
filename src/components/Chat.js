@@ -96,25 +96,32 @@ class Chat extends Component {
   render() {
     const currentMessage = this.state.messages.map((message, i) => {
       return(
-        <li key={message.id}>{message.text}</li>
+        <li key={message.id}>{ message.text}</li>
       )
     })
 
 
     return (
-        <div>
+        <div >
           <Paper zDepth={2}>
-            <Infinite containerHeight={200} elementHeight={40}>
-              <ol>
-                {currentMessage}
-              </ol>
-            </Infinite>
-            <Divider />
-            <input onChange={this.updateMessage} type="text" placeholder="Message" />
-            <br />
-            <button onClick={this.submitMessage}>Submit Message</button>
-  </Paper>
-  </div>
+              <div className="container">
+                  <div className="row">
+                    <div className="col s12">
+                    <Infinite containerHeight={200} elementHeight={40}>
+                      <ol>
+                        {currentMessage}
+
+                      </ol>
+                    </Infinite>
+                  </div>
+                    <div className="col s10" >
+                      <input onChange={this.updateMessage} type="text" placeholder="Type a message..." /></div>
+                    <div className="col s2" >
+                      <button onClick={this.submitMessage}>Submit Message</button></div>
+                  </div>
+              </div>
+            </Paper>
+          </div>
     )
   }
 }

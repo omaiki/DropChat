@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Chat from './Chat.js'
+import RaisedButton from 'material-ui/RaisedButton';
 
 class UserInput extends Component {
 
@@ -35,7 +36,7 @@ class UserInput extends Component {
   render() {
     return (
       <div>
-        <input onChange={this.updateMessage} type="text" placeholder="Message" />
+        <input onChange={this.updateMessage} type="text" placeholder="Type a Message..." />
         <button onClick={this.submitMessage}>Submit Message</button>
 
       </div>
