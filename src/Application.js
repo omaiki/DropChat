@@ -7,8 +7,17 @@ import Restaurants from './Restaurants';
 import './Application.css';
 import ChatList from './components/ChatList';
 import NewChat from './NewChat';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import RaisedButton from 'material-ui/RaisedButton';
+import AppBar from 'material-ui/AppBar';
+import { List } from 'material-ui/List';
+import Divider from 'material-ui/Divider';
+import Subheader from 'material-ui/Subheader';
+import Paper from 'material-ui/Paper';
 
 import map from 'lodash/map';
+
 
 class Application extends Component {
   constructor(props) {
@@ -45,25 +54,42 @@ class Application extends Component {
     const { currentUser, restaurants, chats } = this.state;
 
     return (
+      <MuiThemeProvider>
+      <div className="container">
       <div className="Application">
-        <header className="Application--header">
-          <h1>DropChat</h1>
-        </header>
-        <div>
-        {!currentUser && <SignIn />}
+            <AppBar
+            title="DropChat"
+            showMenuIconButton={false}>
+              {!currentUser && <SignIn />}
+              {currentUser && <CurrentUser user={currentUser} />} </AppBar>
+
+        <div className="row">
+          <div className="col s2" >
+
         {
           currentUser &&
-          <div>
-          <NewRestaurant />
-          <NewChat />
-          { map(restaurants, (restaurant, key) => <p key={key}>{ restaurant.name }</p> ) }
+          <div >
+            <Subheader>OTHER ROOMS</Subheader>
+            <Divider/>
           { map(chats, (chat, key) => <p key={key}> { chat.name} </p>) }
-          <CurrentUser user={currentUser} />}
+            <Divider/>
+
+          <Subheader>CREATE NEW CHAT</Subheader>
+
+          <NewChat />
           </div>
         }
+
+
         </div>
-        < ChatList />
+        <div className="col s8" >
+          <Subheader>CHAT ROOMS</Subheader>
+          <Divider/>
+        < ChatList /></div>
       </div>
+      </div>
+      </div>
+    </MuiThemeProvider>
     );
   }
 }
