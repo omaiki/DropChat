@@ -1,0 +1,15 @@
+.Chat {
+  margin: 1em;
+  min-width: 200px;
+  text-align: center;
+  border: 1px solid #eee;
+  padding: 1em;
+}
+
+.Chat--name {
+  margin-top: 0;
+}
+
+.Chat--votes {
+  text-align: left;
+}

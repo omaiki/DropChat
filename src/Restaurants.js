@@ -33,7 +33,7 @@ class Restaurants extends Component {
     const { user, restaurants } = this.props;
     return (
       <section className="Restaurants">
-        {
+       {
           map(restaurants, (restaurant, key) => {
               return <Restaurant
                 key={key}
@@ -43,7 +43,7 @@ class Restaurants extends Component {
                 handleDeselect={() => this.handleDeselect(key)}
               />;
           })
-        }
+        } 
       </section>
     );
   }

@@ -6,6 +6,7 @@ import NewRestaurant from './NewRestaurant';
 import Restaurants from './Restaurants';
 import './Application.css';
 import ChatList from './components/ChatList';
+import Chats from './Chats'
 import NewChat from './NewChat';
 
 import map from 'lodash/map';
@@ -57,12 +58,11 @@ class Application extends Component {
           <NewRestaurant />
           <NewChat />
           <Restaurants restaurants={restaurants} user={currentUser} />
-          { map(chats, (chat, key) => <p key={key}> <button>{ chat.name}</button> </p>) }
+          <Chats chats={chats} user={currentUser}/>
           <CurrentUser user={currentUser} />}
           </div>
         }
         </div>
-        < ChatList />
       </div>
     );
   }
