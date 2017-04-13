@@ -67,7 +67,6 @@ class Application extends Component {
             <Subheader>OTHER ROOMS</Subheader>
             <Divider/>
               <Chats chats={chats} user={currentUser}/>
-              <CurrentUser user={currentUser} />}
             <Divider/>
             <Subheader>CREATE NEW CHAT</Subheader>
 
