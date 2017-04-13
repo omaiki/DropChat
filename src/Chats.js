@@ -13,7 +13,7 @@ class Chats extends Component {
     const currentUser = this.props.user;
     database.ref('/chats')
             .child(key)
-            .child('votes')
+            .child('chatters')
             .child(currentUser.uid)
             .set(currentUser.displayName);
   }
@@ -23,7 +23,7 @@ class Chats extends Component {
     const currentUser = this.props.user;
     database.ref('/chats')
             .child(key)
-            .child('votes')
+            .child('chatters')
             .child(currentUser.uid)
             .remove();
   }

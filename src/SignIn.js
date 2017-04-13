@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { auth, googleAuthProvider, facebookAuthProvider, twitterAuthProvider } from './firebase';
 
+
 class SignIn extends Component {
   render() {
     return (
@@ -13,7 +14,7 @@ class SignIn extends Component {
       </button>
       <button onClick={() => auth.signInWithPopup(twitterAuthProvider)}>
       Login with Twitter
-      </button>
+    </button>
       </div>
     );
   }

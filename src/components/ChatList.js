@@ -10,6 +10,19 @@ import Chat2a from './Chat2a.js'
 
 import * as firebase from 'firebase';
 
+import RaisedButton from 'material-ui/RaisedButton';
+
+import {
+  blue500,
+  pinkA100,
+  grey700,
+
+} from 'material-ui/styles/colors';
+
+const style = {
+  margin: 12,
+  color:pinkA100,
+};
 
 // components cannot be hard coded
 // how to dynamically add and link ??
@@ -17,8 +30,8 @@ const ChatList = () => (
   <Router>
     <div>
       <ul>
-        <a href="#"><button><Link to="/chat1">Chat 1</Link></button></a>
-        <a href="#"><button><Link to="/chat2">Chat 2</Link></button></a>
+        <a href="#"><RaisedButton  style={style} ><Link to="/chat1">Chat 1</Link></RaisedButton></a>
+        <a href="#"><RaisedButton><Link to="/chat2">Chat 2</Link></RaisedButton></a>
       </ul>
 
       <hr/>

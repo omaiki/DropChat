@@ -4,14 +4,14 @@ import './Chat.css'
 
 class Chat extends Component {
   render () {
-    const { name, user, votes, handleSelect, handleDeselect } = this.props;
-    const userHasSelected = votes &&  Object.keys(votes).includes(user.uid)
+    const { name, user, chatters, handleSelect, handleDeselect } = this.props;
+    const userHasSelected = chatters &&  Object.keys(chatters).includes(user.uid)
 
     return (
       <article className="Chat">
       <h3> { name } </h3>
       <ul>
-        {votes && map(votes, (vote, key) => <li key={key}>{ vote }</li>)}
+        {chatters && map(chatters, (vote, key) => <li key={key}>{ vote }</li>)}
       </ul>
       {
         userHasSelected
@@ -31,7 +31,7 @@ class Chat extends Component {
 
 Chat.propTypes = {
   name: PropTypes.string,
-  votes: PropTypes.object,
+  chatters: PropTypes.object,
   user: PropTypes.object,
   handleSelect: PropTypes.func,
   handleDeselect: PropTypes.func
