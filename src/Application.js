@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { auth, database } from './firebase';
 import CurrentUser from './CurrentUser';
 import SignIn from './SignIn';
-import NewRestaurant from './NewRestaurant';
-import Restaurants from './Restaurants';
 import './Application.css';
 import ChatList from './components/ChatList';
 import Chats from './Chats'
@@ -20,7 +18,6 @@ class Application extends Component {
       currentUser: null
     };
 
-    this.restaurantRef = database.ref('/restaurants');
     this.chatRef = database.ref('/chats');
   }
 
@@ -29,10 +26,6 @@ class Application extends Component {
     auth.onAuthStateChanged((currentUser) => {
       console.log('AUTH_CHANGE', currentUser);
       this.setState({ currentUser});
-
-      this.restaurantRef.on('value', (snapshot) => {
-        this.setState({ restaurants: snapshot.val() });
-      });
 
       this.chatRef.on('value', (snapshot) => {
         this.setState({ chats: snapshot.val() });
@@ -55,9 +48,7 @@ class Application extends Component {
         {
           currentUser &&
           <div>
-          <NewRestaurant />
           <NewChat />
-          <Restaurants restaurants={restaurants} user={currentUser} />
           <Chats chats={chats} user={currentUser}/>
           <CurrentUser user={currentUser} />}
           </div>
