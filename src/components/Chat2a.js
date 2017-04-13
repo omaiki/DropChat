@@ -63,14 +63,17 @@ class Chat extends Component {
 
     //when we submit next message, reconnect to firebase
     // find message key and add another key inside
-    //set our nextMessage as value for sub index
-  firebase.database().ref('messages2/'+nextMessage.id).set(nextMessage)
+    //set our nextMessage as value for sub index messages2/
 
+
+    //Need to make 'chats/-KgnQ_o2h1rrTJgG8U2T/' dynamic for each
+  firebase.database().ref('chats/key/' + nextMessage.id).set(nextMessage)
   }
 
 
   render() {
     const currentMessage = this.state.messages.map((message, i) => {
+      //need to map id to current message
       return(
         <li key={message.id}>{message.text}</li>
       )

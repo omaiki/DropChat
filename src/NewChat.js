@@ -6,10 +6,13 @@ class NewChat extends Component {
     super();
     this.state = {
       name: '',
+      //
+      message:[],
     };
 
     //reference to chats
     this.chatsRef = database.ref('/chats');
+    //pushing new chat data to referece
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -17,6 +20,7 @@ class NewChat extends Component {
     event.preventDefault();
     //push name to database
     this.chatsRef.push({name: this.state.name});
+    this.chatsRef.push({message: this.state.message});
   }
 
   render() {

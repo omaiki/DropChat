@@ -29,6 +29,7 @@ class Application extends Component {
     };
 
     this.restaurantRef = database.ref('/restaurants');
+    //Making a new chat node
     this.chatRef = database.ref('/chats');
   }
 

@@ -32,8 +32,7 @@ class Chat extends Component {
     this.submitMessage = this.submitMessage.bind(this)
     // props instead
     this.state = {
-      message: '',
-      messages: []
+      message: ''
     }
   }
 
