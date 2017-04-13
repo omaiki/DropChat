@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { auth, database } from './firebase';
 import CurrentUser from './CurrentUser';
 import SignIn from './SignIn';
-import NewRestaurant from './NewRestaurant';
-import Restaurants from './Restaurants';
 import './Application.css';
 import ChatList from './components/ChatList';
+import Chats from './Chats'
 import NewChat from './NewChat';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -28,7 +27,6 @@ class Application extends Component {
       currentUser: null
     };
 
-    this.restaurantRef = database.ref('/restaurants');
     this.chatRef = database.ref('/chats');
   }
 
@@ -37,10 +35,6 @@ class Application extends Component {
     auth.onAuthStateChanged((currentUser) => {
       console.log('AUTH_CHANGE', currentUser);
       this.setState({ currentUser});
-
-      this.restaurantRef.on('value', (snapshot) => {
-        this.setState({ restaurants: snapshot.val() });
-      });
 
       this.chatRef.on('value', (snapshot) => {
         this.setState({ chats: snapshot.val() });
@@ -68,26 +62,30 @@ class Application extends Component {
 
         {
           currentUser &&
-          <div >
+
+          <div>
             <Subheader>OTHER ROOMS</Subheader>
             <Divider/>
-          { map(chats, (chat, key) => <p key={key}> { chat.name} </p>) }
+              <Chats chats={chats} user={currentUser}/>
+              <CurrentUser user={currentUser} />}
             <Divider/>
+            <Subheader>CREATE NEW CHAT</Subheader>
 
-          <Subheader>CREATE NEW CHAT</Subheader>
+            <NewChat />
 
-          <NewChat />
           </div>
         }
 
 
         </div>
+
         <div className="col s8" >
           <Subheader>CHAT ROOMS</Subheader>
           <Divider/>
         < ChatList /></div>
       </div>
       </div>
+
       </div>
     </MuiThemeProvider>
     );
