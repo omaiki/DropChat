@@ -11,7 +11,7 @@ class Chat extends Component {
       <article className="Chat">
       <h3> { name } </h3>
       <ul>
-        {chatters && map(chatters, (vote, key) => <li key={key}>{ vote }</li>)}
+        {chatters && map(chatters, (chatter, key) => <li key={key}>{ chatter }</li>)}
       </ul>
       {
         userHasSelected

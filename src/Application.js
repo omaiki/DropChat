@@ -58,7 +58,7 @@ class Application extends Component {
               {currentUser && <CurrentUser user={currentUser} />} </AppBar>
 
         <div className="row">
-          <div className="col s2" >
+          <div className="col s12" >
 
         {
           currentUser &&
@@ -66,11 +66,12 @@ class Application extends Component {
           <div>
             <Subheader>OTHER ROOMS</Subheader>
             <Divider/>
-              <Chats chats={chats} user={currentUser}/>
-            <Divider/>
             <Subheader>CREATE NEW CHAT</Subheader>
 
             <NewChat />
+
+            <Divider/>
+            <Chats chats={chats} user={currentUser}/>
 
           </div>
         }
@@ -78,10 +79,7 @@ class Application extends Component {
 
         </div>
 
-        <div className="col s8" >
-          <Subheader>CHAT ROOMS</Subheader>
-          <Divider/>
-        < ChatList /></div>
+
       </div>
       </div>
 
