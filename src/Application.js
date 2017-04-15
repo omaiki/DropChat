@@ -15,6 +15,10 @@ import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+import SideNav from './SideNav.js';
+
 import map from 'lodash/map';
 
 
@@ -46,6 +50,7 @@ class Application extends Component {
 
   render() {
     const { currentUser, restaurants, chats } = this.state;
+    var chatNames = [];
 
     return (
       <MuiThemeProvider>
@@ -65,6 +70,10 @@ class Application extends Component {
 
           <div>
             <Subheader>OTHER ROOMS</Subheader>
+            <SideNav names={chatNames} />
+            {map(chats,(chat, key) =>
+              {chatNames.push(chat.name)})
+            }
             <Divider/>
             <Subheader>CREATE NEW CHAT</Subheader>
 

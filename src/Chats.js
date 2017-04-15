@@ -40,6 +40,8 @@ class Chats extends Component {
               user={user}
               handleSelect={() => this.handleSelect(key)}
               handleDeselect={() => this.handleDeselect(key)}
+
+              
             />;
         })
       }
